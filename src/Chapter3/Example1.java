@@ -1,10 +1,10 @@
 package Chapter3;
 
 /**
- * @Author:ONE
- * @Date:Creat in 2020/9/6
- * @Github:https://github.com/MrNiurh
- */
+ * @author MrNiurh
+ * @date Creat in 2020/9/6
+ * @github https://github.com/MrNiurh
+ **/
 public class Example1 {
 
     public static void main(String[] args) {
@@ -14,10 +14,11 @@ public class Example1 {
     }
 
     /**
-     * @Description 用于检测一个特定值是否为 NaN用于检测一个特定值是否为 NaN
-     * @Param []
-     * @Return void
-     */
+     * @param
+     * @return void
+     * @description 用于检测一个特定值是否为 NaN用于检测一个特定值是否为 NaN
+     * @author MrNiurh
+     **/
     private static void nanTest() {
         double num = Double.NaN;
 
@@ -37,9 +38,10 @@ public class Example1 {
     }
 
     /**
-     * @Description 浮点数值不适用于无法接受舍入误差的计算, 计算 （2.0 - 1.1） 的值
-     * @Param []
-     * @Return void
+     * @param
+     * @return void
+     * @description 浮点数值不适用于无法接受舍入误差的计算, 计算 （2.0 - 1.1） 的值
+     * @author MrNiurh
      **/
     private static void doubleTest() {
         System.out.println((2.0 - 1.1));
