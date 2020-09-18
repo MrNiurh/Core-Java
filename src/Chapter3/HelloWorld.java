@@ -3,7 +3,7 @@ package Chapter3;
 /**
  * @author MrNiurh
  * @date Creat in 2020/9/1
- * @see <a href="https://github.com/MrNiurh">github</a>
+ * @see <a href="https://github.com/MrNiurh?tab=repositories">github</a>
  */
 public class HelloWorld {
 
