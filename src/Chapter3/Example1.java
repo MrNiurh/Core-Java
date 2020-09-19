@@ -4,9 +4,10 @@ package Chapter3;
  * @author MrNiurh
  * @date Creat in 2020/9/6
  * @see <a href="https://github.com/MrNiurh?tab=repositories">github</a>
- */
+ **/
 public class Example1 {
 
+    // 3.3 数据类型
     public static void main(String[] args) {
         nanTest();
         doubleTest();
@@ -14,7 +15,7 @@ public class Example1 {
     }
 
     /**
-     * 用于检测一个特定值是否为 NaN用于检测一个特定值是否为 NaN
+     * #检测一个特定值是否等于 Double.NaN
      *
      * @return void
      */
@@ -37,7 +38,7 @@ public class Example1 {
     }
 
     /**
-     * 浮点数值不适用于无法接受舍入误差的计算, 计算 （2.0 - 1.1） 的值
+     * 浮点数值不适用于无法接受舍入误差的计算
      *
      * @return void
      */

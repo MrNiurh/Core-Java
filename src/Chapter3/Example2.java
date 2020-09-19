@@ -6,6 +6,8 @@ package Chapter3;
  * @see <a href="https://github.com/MrNiurh?tab=repositories">github</a>
  */
 public class Example2 {
+
+    // 3.3.3 char 类型
     public static void main(String[] args) {
         charTest();
     }

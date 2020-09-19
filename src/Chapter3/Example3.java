@@ -7,6 +7,7 @@ package Chapter3;
  */
 public class Example3 {
 
+    // 3.4 变量与常量
     public static void main(String[] args) {
         variableTest();
         System.out.println("=======================================");
