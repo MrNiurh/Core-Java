@@ -5,7 +5,7 @@ import static java.lang.Math.*;
 /**
  * @author MrNiurh
  * @date Creat in 2020/9/19
- * @see <a href="https://github.com/MrNiurh">github</a>
+ * @see <a href="https://github.com/MrNiurh?tab=repositories">github</a>
  */
 public class Example4 {
 
@@ -74,6 +74,8 @@ public class Example4 {
             a += (b += c)
          */
 
-
+        /*
+            位运算符包括： & ("and")  | ("or")  ^ ("xor")  ~("not")
+         */
     }
 }
