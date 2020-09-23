@@ -36,8 +36,24 @@ public class Example6 {
             String username = cons.readLine("User name: ");
             char[] password = cons.readPassword("Password:");
         } else {
+
             System.out.println("Console is null!");
         }
+
+        double x = 1000.0 / 3.0;
+        System.out.println("x = " + x);
+        System.out.print("printf(\"%8.3f\",x):");
+        System.out.printf("%8.2f", x);
+        System.out.println();
+
+        /*
+            用于 printf 的转换符
+
+         */
+        String username = "MrNiurh";
+        int age = 22;
+        System.out.printf("Hello,%s.Next year,you'll be %d", username, age + 1);
+
 
     }
 }
