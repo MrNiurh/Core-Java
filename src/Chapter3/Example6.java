@@ -2,6 +2,9 @@ package Chapter3;
 
 import javax.xml.crypto.Data;
 import java.io.Console;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -94,7 +97,17 @@ public class Example6 {
         System.out.printf("%-#8.2f\n", 159f);   // "159.00 "        添加前缀，左对齐
         System.out.printf("%,d\n", 1234567890); // "1,234,567,890"  添加分组分隔符
 
-        System.out.printf("%1$s %2$tB %2$te,%2$tY\n","Due date:",new Date());
-        System.out.printf("%s %tB %<te,%<tY\n","Due date:",new Date());
+        System.out.printf("%1$s %2$tB %2$te,%2$tY\n", "Due date:", new Date());
+        System.out.printf("%s %tB %<te,%<tY\n", "Due date:", new Date());
+
+        // 文件输入与输出
+        // 没作用，后期系统写一个
+        try {
+            String filePath = "F:\\myfile.txt";
+            //PrintWriter out = new PrintWriter(filePath,StandardCharsets.UTF_8);
+            //Scanner in = new Scanner(Path.of(filePath), StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
