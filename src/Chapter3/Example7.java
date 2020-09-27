@@ -9,7 +9,7 @@ public class Example7 {
 
     // 3.8 控制流程
     public static void main(String[] args) {
-        controllTest();
+        controlTest();
     }
 
     /**
@@ -17,7 +17,7 @@ public class Example7 {
      *
      * @return void
      */
-    private static void controllTest() {
+    private static void controlTest() {
 
         // if,while,for,switch
 
