@@ -9,7 +9,6 @@ import static java.lang.Math.*;
  */
 public class Example4 {
 
-
     // 3.5 运算符
     public static void main(String[] args) {
 
