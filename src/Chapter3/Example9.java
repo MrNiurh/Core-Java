@@ -73,6 +73,10 @@ public class Example9 {
         System.out.println("sort copyArray:" + Arrays.toString(copyArray));
 
         /*
+            toString()  // 返回字符串，元素用中括号包围，逗号分隔   见上
+            copyOf(xxx[] a, int end)    // 复制数组
+            sort()      //数组排序
+
             static xxx[] copyOfRange(xxx[] a, int start, int end)   返回与 a 同类型的数组，长度为
                 end - start,数组元素为 a 的值。如果 end 大于 a.length,结果会填充 0 或 false 值。
             static int binarySearch(xxx[] a, xxx v)
@@ -138,9 +142,8 @@ public class Example9 {
             System.out.println();
         }
 
-        /* 结果输出
+        /* 结果输出 Max = 7;
                1
-               1   1
                1   2   1
                1   3   3   1
                1   4   6   4   1
