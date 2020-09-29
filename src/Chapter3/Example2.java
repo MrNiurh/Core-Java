@@ -12,7 +12,6 @@ public class Example2 {
         charTest();
     }
 
-
     /**
      * 转义字符的功能测试
      *
