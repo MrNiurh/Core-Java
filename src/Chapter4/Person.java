@@ -22,6 +22,14 @@ public class Person {
 
     private int id = assignId();
 
+    public Person(String n, double i) {
+        name = n;
+        salary = i;
+    }
+
+    public Person(double i) {
+    }
+
     private static int assignId() {
         int r = nextId;
         nextId++;
@@ -77,4 +85,11 @@ public class Person {
         this.hireDay = hireDay;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
