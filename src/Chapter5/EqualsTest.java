@@ -26,6 +26,9 @@ public class EqualsTest {
         System.out.println("alice1.equals(bob):" + alice1.equals(bob));
 
         System.out.println("bob.toString():" + bob);
+
+        System.out.println("alice1.hashCode():" + alice1.hashCode());
+        System.out.println("alice2.hashCode():" + alice3.hashCode());
     }
 
 
