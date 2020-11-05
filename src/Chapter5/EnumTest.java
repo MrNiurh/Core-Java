@@ -21,6 +21,9 @@ public class EnumTest {
         // toString 的逆方法是 valueOf
         Size size = Enum.valueOf(Size.class, input);
 
+        // 返回枚举常量在 enum 声明中的位置，位置从 0 开始
+        size.ordinal();
+
         System.out.println("size=" + size);
         System.out.println("abbreviation=" + size.getAbbreviation());
         if (size == Size.EXTRA_LARGE) {

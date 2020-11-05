@@ -19,7 +19,7 @@ public class ArrayListTest {
         staff.add(new Employee("Boc", 22222, 2003, 12, 12));
         staff.add(new Employee("Carl", 3333, 2004, 12, 12));
 
-        // raise every's salary by 5%
+        // raise everyone's salary by 5%
         for (Employee employee : staff) {
             employee.raiseSalary(5);
         }
