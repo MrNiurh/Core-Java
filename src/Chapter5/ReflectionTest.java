@@ -47,6 +47,54 @@ public class ReflectionTest {
         printFields(cl);
         System.out.println("}");
 
+        /**
+         * java.lang.Class
+         *
+         * Field[] getFields()
+         * Field[] getDeclaredFields() getField 方法返回一个包含 Field 对象的数组，这些对象对应这个类或其超类的公共字段。
+         *      getDeclaredField 方法也返回包含 Field 对象的数组，这些对象对应这个类的全部字段。如果类中没有字段，或者Class
+         *      对象描述的是基本类型或数组类型，这些方法将返回一个长度为 0 的数组。
+         * Method[] getMethods()
+         * Method[] getDeclaredMethods() getMethods 将返回所有的公共方法，包括从超类继承来的公共方法；getDeclaredMethods
+         *      返回这个类或接口的全部方法，但不包括由超类继承的方法。
+         * Constructors[] getConstructors()
+         * Constructors[] getDeclaredConstructors() 返回包含 Constructors 对象的数组，其中包含 Class 对象所表示的类的
+         *      所有公共构造器(getConstructors)或全部构造器(getDeclaredConstructors)。
+         * String getPackageName() 得到包含这个类型的包的包名，如果这个类型是一个数组类型，则返回元素类型所属的包，或者如果
+         *      这个类型是一个基本类型，则返回 "java.lang"
+         */
+
+        /**
+         * java.lang.reflect.Field
+         * java.lang.reflect.Method
+         * java.lang.reflect.Constructor
+         *
+         * Class getDeclaringClass() 返回一个 Class 对象，表示定义了这个构造器、方法或字段的类。
+         * Class[] getExceptionTypes() (在 Constructor 和 Method classes 类中) 返回一个 Class 数组对象，其中各个对象
+         *      表示这个方法所抛出异常的类型。
+         * int getModifiers() 返回一个整数，描述这个构造器、方法或字段的修饰符。使用 Modifier 类中的方法来分析这个返回值。
+         * String getName() 返回一个 Class 对象数组，其中各个对象表示参数的类型。
+         * Class getReturnType() (在 Method 类中)返回一个用于表示返回类型的 Class 对象
+         */
+
+        /**
+         * java.lang.reflect.Modifier
+         *
+         * static String toString(int modifiers) 返回一个字符串，包含对应 modifiers 中位设置的修饰符。
+         * static boolean isAbstract(int modifiers)
+         * static boolean isFinal(int modifiers)
+         * static boolean isInterface(int modifiers)
+         * static boolean isNative(int modifiers)
+         * static boolean isPrivate(int modifiers)
+         * static boolean isProtected(int modifiers)
+         * static boolean isPublic(int modifiers)
+         * static boolean isStatic(int modifiers)
+         * static boolean isStrict(int modifiers)
+         * static boolean isSynchronized(int modifiers)
+         * static boolean isAbstract(int modifiers)
+         * 这些方法将检测 modifiers 值中与方法名中修饰符对应的二进制位。
+         */
+
     }
 
     /**
