@@ -23,6 +23,20 @@ public class CopyOfTest {
 
         System.out.println("The following call will generate an exception.");
         b = (String[]) badCopyOf(b, 10);
+
+        /**
+         * java.lang.reflect.Array
+         *
+         * static Object get(Object array, int index)
+         * static xxx getXxx(Object array, int index) (xxx 是 boolean、byte、char、double、float、int、long、short中的一种基本
+         *      类型。)这些方法将返回存储在给定数组中给定索引位置上的值。
+         * static void set(Object array, int index, Object newValue)
+         * static setXxx(Object array, int index, xxx newValue) (xxx 是 boolean、byte、char、double、float、int、long、short
+         *      中的一种基本类型。)这些方法将一个新值存储到给定数组中的给定位置上。
+         * static int getLength(Object array) 返回给定数组的长度。
+         * static Object newInstance(Class componentType, int length)
+         * static Object newInstance(Class componentType,int[] lengths) 返回一个有给定类型、给定大小的新数组。
+         */
     }
 
     /**
