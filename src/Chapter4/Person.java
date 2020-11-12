@@ -43,7 +43,7 @@ public class Person {
     public Person() {
         String name = "";
         Double salary = 0.0;
-        LocalDate hiryDay = LocalDate.now();
+        LocalDate hireDay = LocalDate.now();
     }
 
     /**
