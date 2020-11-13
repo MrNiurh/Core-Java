@@ -19,7 +19,13 @@ public class EnumTest {
         String small = Size.SMALL.toString();
 
         // toString 的逆方法是 valueOf
-        Size size = Enum.valueOf(Size.class, input);
+        Size size = null;
+        try {
+            size = Enum.valueOf(Size.class, input);
+        } catch (Exception e) {
+            System.err.println("输入类型错误");
+            return;
+        }
 
         // 返回枚举常量在 enum 声明中的位置，位置从 0 开始
         size.ordinal();
