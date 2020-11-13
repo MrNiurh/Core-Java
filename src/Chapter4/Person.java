@@ -28,6 +28,7 @@ public class Person {
     }
 
     public Person(double i) {
+        salary = i;
     }
 
     private static int assignId() {
@@ -41,9 +42,9 @@ public class Person {
      * 仅当类没有任何其他构造器的时候，才会得到一个默认的无参数构造器
      */
     public Person() {
-        String name = "";
-        Double salary = 0.0;
-        LocalDate hireDay = LocalDate.now();
+        name = "";
+        salary = 0.1;
+        hireDay = LocalDate.now();
     }
 
     /**
