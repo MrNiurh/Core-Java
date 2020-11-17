@@ -18,7 +18,6 @@ public class Example1 {
 
         //MethodReference();
 
-
         String[] strings = new String[]{"Tom", "Jerry", "morty", "rick"};
 
         // 对字符排序，而不考虑字母的大小写
@@ -26,7 +25,22 @@ public class Example1 {
         for (String s : strings) {
             System.out.println(s);
         }
+
+        String x = " in ";
+
     }
+
+    /**
+     * 方法引用                 等价的 lambda 表达式
+     *
+     * separator::equals        x -> separator.equals(x)
+     * String::trim             x -> x.trim()
+     * String::concat           (x,y) -> x.concat(y)
+     * Integer::valueOf         x -> Integer::valueOf(x)
+     * Integer::sum             (x,y) -> Integer::sum(x,y)
+     * Integer::new             x -> new Integer(x)
+     * Integer[]::new           n -> new Integer[n]
+     */
 
     /**
      * 6.2.4 方法引用
