@@ -1,9 +1,7 @@
 package Chapter6;
 
 import javax.swing.*;
-import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.Objects;
 
 /**
  * @author MrNiurh
@@ -13,7 +11,7 @@ import java.util.Objects;
  */
 public class Example1 {
 
-
+    // 6.2.4 方法引用
     public static void main(String[] args) {
 
         //MethodReference();
@@ -25,8 +23,6 @@ public class Example1 {
         for (String s : strings) {
             System.out.println(s);
         }
-
-        String x = " in ";
 
     }
 
