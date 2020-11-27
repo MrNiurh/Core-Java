@@ -1,5 +1,6 @@
 package Chapter8;
 
+import java.lang.reflect.Method;
 import java.util.Scanner;
 
 /**
@@ -24,5 +25,24 @@ public class GenericReflectionTest {
                 name = in.next();
             }
         }
+
+        try {
+            // print generic info for class and public methods
+            Class<?> cl = Class.forName(name);
+            printClass(cl);
+            for (Method m : cl.getDeclaredMethods()) {
+                printMethod(m);
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
+
+
+    private static void printClass(Class<?> cl) {
+    }
+
+    private static void printMethod(Method m) {
+    }
+
 }
