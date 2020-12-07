@@ -1,8 +1,11 @@
 package Chapter9;
 
 
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 /**
  * @author MrNiurh
@@ -16,14 +19,20 @@ public class TreeSetTest {
     public static void main(String[] args) {
 
         var parts = new TreeSet<Item>();
-        parts.add(new Item("Toaster", 1234));
-        parts.add(new Item("Widget", 4562));
-        parts.add(new Item("Modem", 9912));
+        parts.add(new Item("Bob", 1234));
+        parts.add(new Item("Author", 2536));
+        parts.add(new Item("Dan", 6653));
+        parts.add(new Item("Dan", 6653));
+        parts.add(new Item("Dan", 9999));
+        parts.add(new Item("Carl", 7542));
 
         var sortByDescription = new TreeSet<Item>(Comparator.comparing(Item::getDescription));
 
+        System.out.println(parts);
         sortByDescription.addAll(parts);
         System.out.println(sortByDescription);
 
+
     }
+
 }

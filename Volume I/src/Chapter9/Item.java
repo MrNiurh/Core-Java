@@ -8,7 +8,7 @@ import java.util.*;
  * @description
  * @see <a href="https://github.com/MrNiurh?tab=repositories">github</a>
  */
-public class Item {
+public class Item implements Comparable<Item> {
 
     private String description;
     private int partNumber;
