@@ -47,7 +47,6 @@ public class ThreadTest {
         new Thread(task2).start();
 
         // Thread.sleep(2000L);
-        bank.printMethod();
 
     }
 }

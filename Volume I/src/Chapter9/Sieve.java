@@ -27,6 +27,7 @@ public class Sieve {
         int count = 0;
         int i;
         for (i = 2; i <= n; i++) {
+            // 设置一个位
             bitSet.set(i);
         }
         i = 2;
@@ -37,6 +38,7 @@ public class Sieve {
                 // 清除 i 的倍数位
                 int k = 2 * i;
                 while (k <= n) {
+                    // 清除一个位
                     bitSet.clear(k);
                     k += i;
                 }
