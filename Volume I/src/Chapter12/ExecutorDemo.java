@@ -87,10 +87,22 @@ public class ExecutorDemo {
                 tasks.add(task);
             }
 
-            ExecutorService executor = Executors.newCachedThreadPool();
+            /**
+             * 构造一个线程池，如果有空闲线程可用，就使用现有空闲线程执行任务；如果没有可用的空闲线程，则创建一个新线程。
+             * 文件多的时候非常耗性能，慎用
+             */
+
+            // ExecutorService executor = Executors.newCachedThreadPool();
             // use a single thread executor instead to see if multiple threads
             // speed up to search
-            //  ExecutorService executor = Executors.newSingleThreadExecutor()
+            /**
+             * 构造一个固定大小的线程池
+             */
+            ExecutorService executor = Executors.newFixedThreadPool(20);
+            /**
+             * 退化了的大小为 1 的线程池
+             */
+            // ExecutorService executor = Executors.newSingleThreadExecutor();
 
             Instant startTime = Instant.now();
             List<Future<Long>> results = executor.invokeAll(tasks);
