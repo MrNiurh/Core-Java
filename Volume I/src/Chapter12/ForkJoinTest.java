@@ -26,38 +26,40 @@ public class ForkJoinTest {
         pool.shutdown();
         System.out.println(counter.join());
     }
-}
 
-class Counter extends RecursiveTask<Integer> {
+    static class Counter extends RecursiveTask<Integer> {
 
-    public static final int THRESHOLD = 1000;
-    private double[] values;
-    private int from;
-    private int to;
-    private DoublePredicate filter;
+        public static final int THRESHOLD = 1000;
+        private double[] values;
+        private int from;
+        private int to;
+        private DoublePredicate filter;
 
-    public Counter(double[] values, int from, int to, DoublePredicate filter) {
-        this.values = values;
-        this.from = from;
-        this.to = to;
-        this.filter = filter;
+        public Counter(double[] values, int from, int to, DoublePredicate filter) {
+            this.values = values;
+            this.from = from;
+            this.to = to;
+            this.filter = filter;
 
-    }
+        }
 
-    @Override
-    protected Integer compute() {
-        if (to - from < THRESHOLD) {
-            int count = 0;
-            for (int i = from; i < to; i++) {
-                if (filter.test(values[i])) count++;
+        @Override
+        protected Integer compute() {
+            if (to - from < THRESHOLD) {
+                int count = 0;
+                for (int i = from; i < to; i++) {
+                    if (filter.test(values[i])) count++;
+                }
+                return count;
+            } else {
+                int mid = (from + to) / 2;
+                var first = new Counter(values, from, mid, filter);
+                var second = new Counter(values, mid, to, filter);
+                invokeAll(first, second);
+                return first.join() + second.join();
             }
-            return count;
-        } else {
-            int mid = (from + to) / 2;
-            var first = new Counter(values, from, mid, filter);
-            var second = new Counter(values, mid, to, filter);
-            invokeAll(first, second);
-            return first.join() + second.join();
         }
     }
 }
+
+
