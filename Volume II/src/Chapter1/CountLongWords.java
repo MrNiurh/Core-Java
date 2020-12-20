@@ -14,6 +14,7 @@ import java.util.List;
  */
 public class CountLongWords {
 
+    // 1.1 从迭代到流的操作
     public static void main(String[] args) throws IOException {
 
         // 单词长度（大于此长度则计数）
