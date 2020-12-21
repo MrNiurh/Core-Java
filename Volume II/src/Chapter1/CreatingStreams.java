@@ -36,7 +36,7 @@ public class CreatingStreams {
 
     // 1.2 流的创建
     public static void main(String[] args) throws IOException {
-        Path path = Paths.get("E:/IdeaProjects/Core-Java/Volume II/src/Resources/txt/paper.txt");
+        Path path = Paths.get("Volume II", "src", "Resources", "txt", "paper.txt");
         var contents = new String(Files.readAllBytes(path), StandardCharsets.UTF_8);
 
         Stream<String> words = Stream.of(contents.split("\\PL+"));
@@ -66,7 +66,7 @@ public class CreatingStreams {
         Stream<Path> rootDirectories = StreamSupport.stream(iterable.spliterator(), false);
         show("rootDirectories", rootDirectories);
 
-        Iterator<Path> iterator = Paths.get("E:/IdeaProjects/Core-Java/Volume II/src/Resources/txt/paper.txt").iterator();
+        Iterator<Path> iterator = Paths.get("Volume II", "src", "Resources", "txt", "paper.txt").iterator();
         Stream<Path> pathComponents = StreamSupport.stream(Spliterators.spliteratorUnknownSize(iterator, Spliterator.ORDERED), false);
         show("pathComponents", pathComponents);
     }

@@ -18,10 +18,10 @@ public class CountLongWords {
     public static void main(String[] args) throws IOException {
 
         // 单词长度（大于此长度则计数）
-        int wordLength = 12;
+        int wordLength = 5;
 
         var contents = new String(Files.readAllBytes(
-                Paths.get("E:/IdeaProjects/Core-Java/Volume II/src/Resources/txt/paper.txt")
+                Paths.get("Volume II", "src", "Resources", "txt", "paper.txt")
         ), StandardCharsets.UTF_8);
 
         // 以非字母分隔符
