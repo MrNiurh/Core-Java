@@ -1,5 +1,6 @@
 package Others;
 
+import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
@@ -18,26 +19,25 @@ public class MoneyCount {
     private final static int endHour = 22;
 
     // 会议室价格/每小时
-    private final static double moneyPerHour = 40.0;
-
+    private final static BigDecimal moneyPerHour = BigDecimal.valueOf(40.0);
 
     public static void main(String[] args) {
         getMoney();
-
     }
 
 
     /**
      * 计算会议室收费
+     * BigDecimal 处理精度问题
      *
      * @return double
      */
-    private static double getMoney() {
+    private static BigDecimal getMoney() {
 
         // 会议开始日期、时间
-        LocalDateTime startTime = LocalDateTime.of(2020, 11, 9, 7, 30);
+        LocalDateTime startTime = LocalDateTime.of(2020, 11, 9, 8, 30);
         // 会议结束日期、时间
-        LocalDateTime endTime = LocalDateTime.of(2020, 11, 16, 22, 30);
+        LocalDateTime endTime = LocalDateTime.of(2020, 11, 16, 19, 0);
 
         // 计算日期差
         Duration duration = Duration.between(startTime, endTime);
@@ -45,7 +45,7 @@ public class MoneyCount {
 
         if (duration.toMinutes() < 0) {
             System.err.println("会议结束时间不能早于开始时间");
-            return 0.0;
+            return null;
         }
 
         // 开始 & 结束 时间的时间点（小时）
@@ -56,12 +56,21 @@ public class MoneyCount {
         int endMinute = endTime.getMinute();
 
         // 时间转换
-        double realStart = timeTransfer(start, startMinute);
-        double realEnd = timeTransfer(end, endMinute);
+        BigDecimal realStart = timeTransfer(start, startMinute);
+        BigDecimal realEnd = timeTransfer(end, endMinute);
 
-        // 总时间合计（加上分钟）
-        double totalHours = (realEnd - realStart) + days * (endHour - startHour);
-        double totalMoney = totalHours * moneyPerHour;
+        /**
+         * 总时间合计
+         * (realEnd - realStart) + days * (endHour - startHour)
+         */
+        BigDecimal totalHours = realEnd.subtract(realStart)
+                .add(BigDecimal.valueOf(days)
+                        .multiply(BigDecimal.valueOf(endHour).subtract(BigDecimal.valueOf(startHour))));
+        /**
+         * 价格计算
+         * totalHours * moneyPerHour
+         */
+        BigDecimal totalMoney = totalHours.multiply(moneyPerHour);
 
         // 将时间内的 T 去掉
         System.out.println("会议开始时间： " + startTime.toString().replace("T", " "));
@@ -81,14 +90,17 @@ public class MoneyCount {
      * @param time
      * @return
      */
-    private static double timeTransfer(int time, int minute) {
+    private static BigDecimal timeTransfer(int time, int minute) {
         if (time < startHour) {
-            return startHour;
+            return BigDecimal.valueOf(startHour);
         }
         if (time >= endHour) {
-            return endHour;
+            return BigDecimal.valueOf(endHour);
         } else {
-            return time + minute / 60.0;
+            /**
+             * time + minute/60.0
+             */
+            return BigDecimal.valueOf(time).add(BigDecimal.valueOf(minute).divide(BigDecimal.valueOf(60.0)));
         }
     }
 }
