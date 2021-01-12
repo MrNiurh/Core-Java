@@ -2,7 +2,9 @@ package Others;
 
 import java.math.BigDecimal;
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 /**
  * @Author MrNiurh
@@ -30,18 +32,23 @@ public class MoneyCount {
      * 计算会议室收费
      * BigDecimal 处理精度问题
      *
-     * @return double
+     * @return BigDecimal
      */
     private static BigDecimal getMoney() {
 
         // 会议开始日期、时间
-        LocalDateTime startTime = LocalDateTime.of(2020, 11, 9, 8, 30);
+        LocalDateTime startTime = LocalDateTime.of(2021, 1, 11, 21, 0);
         // 会议结束日期、时间
-        LocalDateTime endTime = LocalDateTime.of(2020, 11, 16, 19, 0);
+        LocalDateTime endTime = LocalDateTime.of(2021, 1, 12, 13, 0);
 
-        // 计算日期差
+        LocalDate s = startTime.toLocalDate();
+        LocalDate e = endTime.toLocalDate();
+        // 计算日期差(天数，不在同一天即有差值)
+        long days = s.until(e, ChronoUnit.DAYS);
+
         Duration duration = Duration.between(startTime, endTime);
-        long days = duration.toDays();
+        //long days = duration.toDays();
+
 
         if (duration.toMinutes() < 0) {
             System.err.println("会议结束时间不能早于开始时间");
@@ -88,7 +95,6 @@ public class MoneyCount {
      * 大于计费关闭时间记为关闭时间
      *
      * @param time
-     * @return
      */
     private static BigDecimal timeTransfer(int time, int minute) {
         if (time < startHour) {
